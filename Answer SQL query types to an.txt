@@ -1,0 +1,45 @@
+Use the following query types to analyze data:
+
+Basic Data Exploration
+
+SQL
+Copy
+Edit
+SELECT * FROM orders LIMIT 10;
+Aggregation and Grouping
+
+SQL
+Copy
+Edit
+SELECT region, SUM(sales) AS total_sales
+FROM orders
+GROUP BY region
+ORDER BY total_sales DESC;
+Trends Over Time
+
+SQL
+Copy
+Edit
+SELECT DATE_TRUNC('month', order_date) AS month, SUM(sales) AS monthly_sales
+FROM orders
+GROUP BY month
+ORDER BY month;
+Profitability Analysis
+
+SQL
+Copy
+Edit
+SELECT category, SUM(profit) AS total_profit
+FROM orders
+GROUP BY category
+ORDER BY total_profit DESC;
+Top Products or Customers
+
+SQL
+Copy
+Edit
+SELECT customer_id, SUM(sales) AS customer_sales
+FROM orders
+GROUP BY customer_id
+ORDER BY customer_sales DESC
+LIMIT 5;
